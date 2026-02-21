@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - Sistema</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow">
+            <div class="card-body p-5 text-center">
+              <h1 class="card-title mb-4">Bem-vindo(a)!</h1>
+              <p class="lead mb-4" id="mensagemBoasVindas">Você realizou login com sucesso.</p>
+              <a href="index.html" class="btn btn-outline-primary">Sair</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      (function () {
+        var email = sessionStorage.getItem('usuarioEmail');
+        var el = document.getElementById('mensagemBoasVindas');
+        if (email) {
+          el.textContent = 'Você realizou login com sucesso. Bem-vindo(a), ' + email + '!';
+        }
+      })();
+    </script>
+  </body>
+</html>
